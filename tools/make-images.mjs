@@ -32,7 +32,7 @@ const van = (len, lux) => {
   return `<g><ellipse cx="${w / 2}" cy="43" rx="${w / 2}" ry="3.5" fill="#000" opacity=".18"/><path fill="#f7f5ef" stroke="#1e3a2b" stroke-width="1.4" d="M11 8Q13 2 21 2H${w - 6}Q${w} 2 ${w} 8V36H4V22Q4 14 11 8Z"/><path fill="#38505c" d="M8 21L14.5 8H24V21Z"/>${wins}<rect x="4" y="25" width="${w - 4}" height="3" fill="${lux ? "#c9a24a" : "#b4472b"}"/><circle cx="21" cy="37" r="7" fill="#1b1d1a"/><circle cx="21" cy="37" r="2.8" fill="#9aa59c"/><circle cx="${w - 18}" cy="37" r="7" fill="#1b1d1a"/><circle cx="${w - 18}" cy="37" r="2.8" fill="#9aa59c"/></g>`;
 };
 for (const v of C.fleet) {
-  if (v.photo) continue; // real photo in place: never overwrite it
+  if (v.photo || v.illustration) continue; // real photo or illustration in place: never overwrite it
   const len = v.id === "force-urbania" ? 10 : v.id === "maharaja" ? 18 : 22;
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640">
 <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8dfdc"/><stop offset="1" stop-color="#eef0ea"/></linearGradient></defs>

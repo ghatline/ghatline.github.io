@@ -34,6 +34,13 @@ window.SITE_CONFIG = {
   // once your custom domain is set up, then re-run the generator.
   siteUrl: "https://ghatline.github.io", // change to "https://ghatline.in" if you buy that domain
 
+  // Search engine verification. Paste ONLY the content="..." value from each tool, then re-run the generator.
+  seo: {
+    googleSiteVerification: "", // TODO: Google Search Console > Add property > HTML tag
+    bingSiteVerification: "",   // TODO: Bing Webmaster Tools > Add site > HTML meta tag
+    indexNowKey: "7f76e0ef25389ffd9d524731d81825b8",          // used to ping Bing/Yandex when pages change (tools/indexnow.mjs)
+  },
+
   social: {
     instagram: "",        // TODO: full URL, e.g. https://instagram.com/yourhandle
     instagramHandle: "",  // TODO: e.g. yourhandle (without @)
@@ -64,6 +71,8 @@ window.SITE_CONFIG = {
       features: ["Pushback reclining seats", "Roof AC with individual vents", "Wide aisle and high roof", "USB charging points", "Large rear luggage space", "Music system"],
       idealFor: "Families, corporate offsites and groups who want a smoother, quieter ride on long highway runs.",
       image: "urbania",
+      // Illustration (tools/urbania-illustration.svg). TODO: replace with a photo of your own Urbania, then delete this line.
+      illustration: true,
     },
     {
       id: "force-traveller",

@@ -95,8 +95,8 @@ Pages settings (already done for this repo): **Settings → Pages → Build and 
 ## 6. Search engines
 
 **Google Search Console**
-1. Go to https://search.google.com/search-console and add a **Domain** property (needs a DNS TXT record) or a **URL prefix** property for your site URL.
-2. Verify ownership.
+1. Go to https://search.google.com/search-console and add a **URL prefix** property: `https://ghatline.github.io/`.
+2. Verify with **HTML tag**: copy only the `content="..."` value into `seo.googleSiteVerification` in `config.js`, run `node tools/generate.mjs`, push, wait a minute, then click **Verify**. (Bing works the same with `seo.bingSiteVerification`.)
 3. **Sitemaps** → submit `sitemap.xml`.
 4. Use **URL Inspection → Request indexing** for the home page and your top 3–4 destination pages.
 
@@ -105,7 +105,9 @@ Pages settings (already done for this repo): **Settings → Pages → Build and 
 2. Choose **Import from Google Search Console** (fastest), or add the site manually and verify.
 3. **Sitemaps** → submit `https://<your-site>/sitemap.xml`.
 
-**Google Business Profile:** claim or create it, use the same name, phone and address as the site, and add the website link. Then put the profile URL in `config.js` (`social.googleBusiness`).
+**IndexNow (Bing, Yandex and others):** after each push, run `node tools/indexnow.mjs` to tell them your pages changed. It's free and needs no account; the key file is already published.
+
+**Google Business Profile:** this is the single biggest factor for local searches like "tempo traveller in Bangalore" (the map results). Claim or create it, use the same name, phone and address as the site, and add the website link. Then put the profile URL in `config.js` (`social.googleBusiness`).
 
 ## 7. Project layout
 

@@ -16,6 +16,8 @@ const B = C.business;
 const SITE = C.siteUrl.replace(/\/$/, "");
 const FLEET = C.fleet.filter((v) => v.enabled !== false);
 const DESTS = C.destinations;
+const SEAT_PAGES = [10, 12, 13, 17, 20, 26];
+const seatSlug = (n) => n === 10 ? "10-seater-force-urbania-on-rent-bangalore" : `${n}-seater-tempo-traveller-on-rent-bangalore`;
 const TODAY = new Date().toISOString().slice(0, 10);
 const warnings = [];
 // Cache-busting version for CSS/JS (changes whenever the file changes)
@@ -129,7 +131,7 @@ function head({ title, desc, url, rel, og, jsonld = [], type = "website", noinde
 <title>${e(full)}</title>
 <meta name="description" content="${e(desc)}">
 ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${SITE}/${url}">\n<meta name="robots" content="index, follow, max-image-preview:large">`}
-<meta name="geo.region" content="IN-KA">
+${C.seo && C.seo.googleSiteVerification ? `<meta name="google-site-verification" content="${e(C.seo.googleSiteVerification)}">\n` : ""}${C.seo && C.seo.bingSiteVerification ? `<meta name="msvalidate.01" content="${e(C.seo.bingSiteVerification)}">\n` : ""}<meta name="geo.region" content="IN-KA">
 <meta name="geo.placename" content="Bengaluru">
 <meta name="geo.position" content="${B.geo.lat};${B.geo.lng}">
 <meta name="ICBM" content="${B.geo.lat}, ${B.geo.lng}">
@@ -199,7 +201,7 @@ function footer(rel) {
 <p style="margin-top:1rem">Tempo traveller, Force Urbania and luxury 1x1 vans on rent in Bangalore, for weekend getaways, pilgrimages, weddings and corporate trips across South India.</p>
 ${socials()}
 </div>
-<div><h2>Fleet</h2><ul>${FLEET.map((v) => `<li><a href="${rel}${v.slug}/">${e(v.short)} on rent</a></li>`).join("")}<li><a href="${rel}fleet/">All vehicles</a></li></ul></div>
+<div><h2>Fleet</h2><ul>${FLEET.map((v) => `<li><a href="${rel}${v.slug}/">${e(v.short)} on rent</a></li>`).join("")}<li><a href="${rel}fleet/">All vehicles</a></li>${SEAT_PAGES.filter((n) => FLEET.some((v) => v.seats.includes(n))).map((n) => `<li><a href="${rel}${seatSlug(n)}/">${n} seater</a></li>`).join("")}</ul></div>
 <div><h2>Top routes</h2><ul>${DESTS.filter((d) => d.kind !== "pilgrimage").slice(0, 5).map((d) => `<li><a href="${rel}${d.slug}/">Bangalore to ${e(d.name)}</a></li>`).join("")}${DESTS.filter((d) => ["tirupati", "kukke", "dharmasthala", "sringeri"].includes(d.id)).map((d) => `<li><a href="${rel}${d.slug}/">Bangalore to ${e(d.name)}</a></li>`).join("")}<li><a href="${rel}pilgrimage-tours-from-bangalore/">All temple tours</a></li></ul></div>
 <div><h2>Contact</h2><ul>
 <li><a data-tel href="tel:${B.phone}"><span data-cfg="business.phoneDisplay">${e(B.phoneDisplay)}</span></a></li>
@@ -315,8 +317,8 @@ function estimator(preset = {}) {
 </div>`;
 }
 
-const photoAlt = (v) => v.photo ? `${v.name} (representative photo)` : `${v.name} available on rent in Bangalore (photo placeholder)`;
-const photoCredit = (v) => v.photo ? `<figcaption class="credit">Representative photo, not our vehicle. <a href="${e(v.photo.source)}" target="_blank" rel="noopener">Photo</a>: ${e(v.photo.by)}, <a href="${e(v.photo.licenseUrl)}" target="_blank" rel="noopener">${e(v.photo.license)}</a>, ${e(v.photo.changes)}.</figcaption>` : "";
+const photoAlt = (v) => v.photo ? `${v.name} (representative photo)` : v.illustration ? `Illustration of a ${v.name} on a ghat road` : `${v.name} available on rent in Bangalore (photo placeholder)`;
+const photoCredit = (v) => v.illustration ? `<figcaption class="credit">Illustration. Real photos of our ${e(v.short)} coming soon.</figcaption>` : v.photo ? `<figcaption class="credit">Representative photo, not our vehicle. <a href="${e(v.photo.source)}" target="_blank" rel="noopener">Photo</a>: ${e(v.photo.by)}, <a href="${e(v.photo.licenseUrl)}" target="_blank" rel="noopener">${e(v.photo.license)}</a>, ${e(v.photo.changes)}.</figcaption>` : "";
 function vehicleBlock(rel, v, level = "h3") {
   return `<article class="vehicle reveal">
 <figure class="vehicle-media">
@@ -485,6 +487,18 @@ function addSitemap(url, priority, freq = "monthly") { sitemap.push({ url, prior
 <li><div><h3>Flexible itineraries</h3><p>Want to add Belur on the way to Chikmagalur or a sunset at Murudeshwar? Plan stops your way and we'll quote it.</p></div></li>
 <li><div><h3>One WhatsApp away</h3><p>Quotes, changes and live location sharing during the trip, all on WhatsApp.</p></div></li>
 </ol>
+</div>
+</section>
+
+<section class="section section--tint" aria-labelledby="seo-h">
+<div class="wrap content-grid">
+<div class="prose">
+<h2 id="seo-h">Tempo traveller on rent in Bangalore</h2>
+<p>${e(B.name)} rents air-conditioned tempo travellers and Force Urbania vans with experienced drivers in Bangalore (Bengaluru). Choose a <a href="${seatSlug(12)}/">12 seater</a>, <a href="${seatSlug(13)}/">13 seater</a>, <a href="${seatSlug(17)}/">17 seater</a>, <a href="${seatSlug(20)}/">20 seater</a> or <a href="${seatSlug(26)}/">26 seater tempo traveller</a>, a <a href="${FLEET[0].slug}/">Force Urbania</a> in 10, 13 or 17 seats, or a <a href="${FLEET[2] ? FLEET[2].slug : FLEET[1].slug}/">luxury 1x1 Maharaja tempo traveller</a>.</p>
+<p>Groups book us for weekend getaways to <a href="${DESTS.find((d) => d.id === "coorg").slug}/">Coorg</a>, <a href="${DESTS.find((d) => d.id === "chikmagalur").slug}/">Chikmagalur</a> and <a href="${DESTS.find((d) => d.id === "ooty").slug}/">Ooty</a>, long trips to <a href="${DESTS.find((d) => d.id === "goa").slug}/">Goa</a> and <a href="${DESTS.find((d) => d.id === "kerala").slug}/">Kerala</a>, and <a href="pilgrimage-tours-from-bangalore/">temple tours</a> to <a href="${DESTS.find((d) => d.id === "tirupati").slug}/">Tirupati</a>, <a href="${DESTS.find((d) => d.id === "kukke").slug}/">Kukke Subramanya</a>, <a href="${DESTS.find((d) => d.id === "dharmasthala").slug}/">Dharmasthala</a> and <a href="${DESTS.find((d) => d.id === "sringeri").slug}/">Sringeri</a>. We also handle weddings, corporate offsites, school trips and airport transfers.</p>
+<p>Every quote shows the per-km rate, minimum kilometres per day, driver bata and extras such as tolls and inter-state permits, so you know the full tempo traveller price before you book.</p>
+</div>
+<aside class="side-card"><h2>Pick your seat size</h2><ul class="chip-links">${SEAT_PAGES.filter((n) => FLEET.some((v) => v.seats.includes(n))).map((n) => `<li><a href="${seatSlug(n)}/">${n} seater</a></li>`).join("")}</ul><a class="btn btn--wa" data-wa href="https://wa.me/${B.whatsapp}">${I.wa}Get a quote on WhatsApp</a></aside>
 </div>
 </section>
 
@@ -674,6 +688,58 @@ ${pkgs.map((p) => `<article class="pkg reveal"><div><h2>${e(p.name)}</h2><p clas
   write("packages/index.html", html);
   addSitemap("packages/", "0.8");
 }
+
+/* ---------- SEAT-SIZE LANDING PAGES (high-volume searches like "12 seater tempo traveller Bangalore") ---------- */
+const seatRange = (d) => { const m = /(\d+)\D+(\d+)/.exec(d.vehicle); return m ? [+m[1], +m[2]] : [0, 99]; };
+SEAT_PAGES.forEach((s) => {
+  const rel = "../";
+  const vs = FLEET.filter((v) => v.seats.includes(s));
+  if (!vs.length) return;
+  const slug = seatSlug(s);
+  const label = s === 10 ? `${s} seater Force Urbania` : `${s} seater tempo traveller`;
+  const title = s === 10 ? `${s} Seater Force Urbania on Rent in Bangalore` : `${s} Seater Tempo Traveller on Rent in Bangalore`;
+  const c = crumbs(rel, [["Fleet", "fleet/"], [`${s} seater`, slug + "/"]]);
+  const trips = DESTS.filter((d) => { const [a, b] = seatRange(d); return s >= a && s <= b; });
+  const desc = `Hire a ${label} in Bangalore with driver for outstation and temple trips. Per-km rates, instant fare estimate and WhatsApp booking.`;
+  const faqs = [
+    [`How much does a ${label} cost per km in Bangalore?`, `Rates for a ${s} seater are listed on this page. Outstation trips have a minimum of ${C.pricing.minKmPerDay} km per day plus driver bata; tolls, parking and permits are extra. Use the fare estimator for an indicative total.`],
+    [`How many people fit in a ${s} seater?`, `It seats ${s} passengers. On long trips with full luggage, many groups leave a seat or two free for comfort.`],
+    [`Which vehicles come as a ${s} seater?`, `We offer the ${s} seater as ${vs.map((v) => v.name).join(" and ")}.`],
+    [`Where can we go in a ${s} seater from Bangalore?`, `Popular ${s} seater trips include ${trips.slice(0, 6).map((d) => d.name).join(", ")}.`],
+  ];
+  const html = head({ title, desc, url: slug + "/", rel, og: `seat-${s}`, jsonld: [c.ld, faqLd(faqs), { "@context": "https://schema.org", "@type": "Service", name: `${label} on rent in Bangalore`, serviceType: "Tempo traveller rental with driver", provider: { "@id": `${SITE}/#business` }, areaServed: { "@type": "City", name: "Bengaluru" } }] }) + header(rel, "fleet/") + `
+<section class="page-hero"><div class="wrap">${c.html}
+<p class="eyebrow">${vs.map((v) => e(v.short)).join(" · ")}</p>
+<h1>${e(title.replace(" on Rent", " on rent").replace("Seater", "seater").replace("Tempo Traveller", "tempo traveller"))}</h1>
+<p class="lede">${e(seatGuide(s))} Every vehicle is air-conditioned and comes with an experienced driver and doorstep pickup anywhere in Bengaluru.</p>
+<div class="hero-ctas"><a class="btn btn--wa" data-wa="Hi ${e(B.name)}, I'd like a quote for a ${s} seater." href="https://wa.me/${B.whatsapp}">${I.wa}Get a ${s} seater quote</a><a class="btn btn--ghost" data-tel href="tel:${B.phone}">${I.phone}Call now</a></div>
+</div></section>
+<section class="section"><div class="wrap content-grid">
+<div class="prose">
+<h2>${s} seater rates in Bangalore</h2>
+<p class="sample-note js-sample-note" hidden>Sample rates for preview. Final rates coming soon.</p>
+<table class="rate-table"><thead><tr><th scope="col">Vehicle</th><th scope="col">Per km</th><th scope="col">Min. per day*</th></tr></thead><tbody>${vs.map((v) => `<tr><td><a href="${rel}${v.slug}/">${e(v.short)} ${s} seater</a></td><td>${inr(v.ratePerKm[s] || 0)}/km</td><td>${inr((v.ratePerKm[s] || 0) * C.pricing.minKmPerDay)}</td></tr>`).join("")}</tbody></table>
+<p class="small muted">*Minimum <span class="js-min-km">${C.pricing.minKmPerDay}</span> km per day on outstation trips, plus driver bata of <span class="js-bata">${inr(C.pricing.driverBata)}</span> per day. Tolls, parking, permits and night charges extra. All rates indicative.</p>
+<h2>Is a ${s} seater right for your group?</h2>
+<p>${e(seatGuide(s))} ${s >= 17 ? "Bigger groups split the fare more ways, so a larger van is often the cheapest per head on long trips." : "A smaller van is easier on narrow ghat and temple-town roads and costs less per km."} ${vs.some((v) => v.id === "force-urbania") ? `If comfort matters most, choose the <a href="${rel}${FLEET[0].slug}/">Force Urbania</a> with its smoother ride and pushback seats.` : ""}</p>
+<h3>Luggage</h3>
+<p>The Force Traveller carries luggage on a covered roof carrier; the Urbania has space at the rear. Tell us how many bags you have and we will confirm it fits.</p>
+<h2>Popular ${s} seater trips from Bangalore</h2>
+<ul class="chip-links">${trips.map((d) => `<li><a href="${rel}${d.slug}/">Bangalore to ${e(d.name)}</a></li>`).join("")}</ul>
+<h2>Other seat options</h2>
+<ul class="chip-links">${SEAT_PAGES.filter((o) => o !== s && FLEET.some((v) => v.seats.includes(o))).map((o) => `<li><a href="${rel}${seatSlug(o)}/">${o} seater</a></li>`).join("")}</ul>
+<h2>Frequently asked questions</h2>
+${faqHtml(faqs)}
+</div>
+<aside class="side-card"><h2>Book a ${s} seater</h2>${enquiryForm("seat-enq", { vehicle: `${vs[0].short} · ${s} seater` })}</aside>
+</div></section>
+<section class="section section--tint"><div class="wrap"><div class="fleet-list">${vs.map((v) => vehicleBlock(rel, v, "h2")).join("")}</div></div></section>
+<section class="section section--forest" id="estimate" aria-label="Fare estimator"><div class="wrap">${estimator({ vehicle: `${vs[0].id}:${s}` })}</div></section>
+<section class="section"><div class="wrap">${shareBar(slug + "/", title)}</div></section>
+` + footer(rel);
+  write(`${slug}/index.html`, html);
+  addSitemap(slug + "/", "0.9");
+});
 
 /* ---------- PILGRIMAGE HUB ---------- */
 {
@@ -879,6 +945,7 @@ write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>
 ${sitemap.map((s) => `  <url><loc>${SITE}/${s.url}</loc><lastmod>${TODAY}</lastmod><changefreq>${s.freq}</changefreq><priority>${s.priority}</priority></url>`).join("\n")}
 </urlset>
 `);
+if (C.seo && C.seo.indexNowKey) write(`${C.seo.indexNowKey}.txt`, C.seo.indexNowKey);
 write("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
 write("site.webmanifest", JSON.stringify({ name: B.name, short_name: B.name.length <= 12 ? B.name : B.name.split(" ")[0], description: B.tagline, start_url: "./", scope: "./", display: "standalone", background_color: "#f4f1ea", theme_color: "#1e3a2b", icons: [{ src: "android-chrome-192.png", sizes: "192x192", type: "image/png" }, { src: "android-chrome-512.png", sizes: "512x512", type: "image/png" }, { src: "favicon.svg", sizes: "any", type: "image/svg+xml" }] }, null, 2));
 const seen = new Set();

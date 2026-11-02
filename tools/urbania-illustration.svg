@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640">
+  <!-- Illustration of a premium Urbania-style van on a ghat road (no logos). Source for assets/img/fleet/urbania-*.webp -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9d6d6"/><stop offset=".6" stop-color="#eef0ea"/></linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f8f9"/><stop offset=".55" stop-color="#e3e7ea"/><stop offset="1" stop-color="#b9c1c8"/></linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b3d48"/><stop offset=".5" stop-color="#1a2830"/><stop offset="1" stop-color="#31505e"/></linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <radialGradient id="rim" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#e2e6ea"/><stop offset=".7" stop-color="#a9b1b8"/><stop offset="1" stop-color="#6f777e"/></radialGradient>
+  </defs>
+  <rect width="960" height="640" fill="url(#sky)"/>
+  <path fill="#a8bba3" d="M0 300C120 250 240 232 360 262S600 205 740 245 900 225 960 235V640H0Z"/>
+  <ellipse cx="480" cy="300" rx="620" ry="26" fill="#fff" opacity=".4"/>
+  <path fill="#7d9b77" d="M0 360C180 322 340 312 500 342S800 300 960 322V640H0Z"/>
+  <g fill="#4f7259"><path d="M70 352l16-52 16 52z"/><path d="M98 350l12-40 12 40z"/><path d="M846 322l16-54 16 54z"/><path d="M876 326l12-40 12 40z"/></g>
+  <path fill="#3d6650" d="M0 430C200 400 420 396 600 414S860 404 960 410V640H0Z"/>
+  <!-- road -->
+  <path fill="#9c4a2c" d="M0 500H960V516H0Z" opacity=".85"/>
+  <path fill="#2b2e2b" d="M0 512H960V640H0Z"/>
+  <path d="M0 590H960" stroke="#e9e2c8" stroke-width="4" stroke-dasharray="34 26" opacity=".8"/>
+  <!-- shadow -->
+  <ellipse cx="500" cy="552" rx="380" ry="16" fill="#000" opacity=".35"/>
+  <!-- body -->
+  <path fill="url(#body)" stroke="#8d969e" stroke-width="2" d="M150 488L148 250Q148 210 190 207L640 204Q690 205 712 230L800 344Q812 360 832 368Q852 377 854 400L857 462Q857 492 828 494L178 494Q150 494 150 470Z"/>
+  <!-- glasshouse -->
+  <rect x="182" y="232" width="482" height="98" rx="12" fill="url(#glass)"/>
+  <g fill="#e3e7ea"><rect x="296" y="232" width="10" height="98"/><rect x="414" y="232" width="10" height="98"/><rect x="532" y="232" width="10" height="98"/></g>
+  <path fill="url(#glass)" d="M676 234Q694 234 704 248L790 350Q794 356 786 356L684 356Q676 356 676 346Z"/>
+  <path fill="url(#shine)" d="M190 236H660V262H190Z" opacity=".6"/>
+  <path fill="url(#shine)" d="M690 246L760 340H736L680 262Z" opacity=".7"/>
+  <!-- door shut lines and handle -->
+  <g stroke="#9aa3ab" stroke-width="2" fill="none"><path d="M548 344V486"/><path d="M670 360V486"/><path d="M150 344H846" opacity=".5"/></g>
+  <rect x="560" y="372" width="28" height="7" rx="3" fill="#7b848c"/>
+  <!-- character line -->
+  <path d="M156 410Q500 404 852 420" stroke="#fff" stroke-width="3" fill="none" opacity=".75"/>
+  <path d="M156 414Q500 408 852 424" stroke="#9aa3ab" stroke-width="1.5" fill="none"/>
+  <!-- mirror -->
+  <path fill="#2b3036" d="M698 300h22a6 6 0 0 1 6 6v26a6 6 0 0 1-6 6h-22z"/>
+  <!-- headlamp and grille -->
+  <path fill="#f4f6f8" stroke="#6f777e" stroke-width="2" d="M800 372Q830 376 852 394L852 410Q826 404 796 392Z"/>
+  <path d="M806 384Q830 388 848 400" stroke="#9fd4ff" stroke-width="3" fill="none"/>
+  <path fill="#22272b" d="M836 420H856V462H836Z"/>
+  <path fill="#c9ced3" d="M818 474H857V490H818Z"/>
+  <!-- rear lamp -->
+  <rect x="148" y="262" width="9" height="72" rx="3" fill="#b4472b"/>
+  <!-- wheel arches -->
+  <circle cx="290" cy="496" r="62" fill="#1c1f22"/>
+  <circle cx="704" cy="496" r="62" fill="#1c1f22"/>
+  <path fill="#e3e7ea" d="M140 494H960V520H140Z" opacity="0"/>
+  <!-- wheels -->
+  <g>
+    <circle cx="290" cy="500" r="50" fill="#141619"/>
+    <circle cx="290" cy="500" r="32" fill="url(#rim)"/>
+    <g stroke="#59616a" stroke-width="5" stroke-linecap="round"><path d="M290 472V488"/><path d="M316 491l-14 5"/><path d="M306 524l-9-12"/><path d="M274 524l9-12"/><path d="M264 491l14 5"/></g>
+    <circle cx="290" cy="500" r="8" fill="#3b4148"/>
+    <circle cx="704" cy="500" r="50" fill="#141619"/>
+    <circle cx="704" cy="500" r="32" fill="url(#rim)"/>
+    <g stroke="#59616a" stroke-width="5" stroke-linecap="round"><path d="M704 472V488"/><path d="M730 491l-14 5"/><path d="M720 524l-9-12"/><path d="M688 524l9-12"/><path d="M678 491l14 5"/></g>
+    <circle cx="704" cy="500" r="8" fill="#3b4148"/>
+  </g>
+  <!-- cover body below arches so road shows -->
+  <path fill="#2b2e2b" d="M0 551H960V556H0Z" opacity="0"/>
+</svg>

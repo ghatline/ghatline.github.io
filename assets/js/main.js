@@ -130,7 +130,7 @@
   $$(".js-estimator").forEach(function (root) {
     var vSel = $("[name='vehicle']", root), dSel = $("[name='dest']", root), days = $("[name='days']", root), kmIn = $("[name='km']", root), kmRow = $(".js-km-row", root);
     vehicleOptions(vSel, false); destOptions(dSel, true);
-    if (vSel.getAttribute("data-preset")) { var pv = vSel.getAttribute("data-preset"); var o = Array.prototype.filter.call(vSel.options, function (x) { return x.value.indexOf(pv + ":") === 0; })[0]; if (o) vSel.value = o.value; }
+    if (vSel.getAttribute("data-preset")) { var pv = vSel.getAttribute("data-preset"); var o = Array.prototype.filter.call(vSel.options, function (x) { return x.value === pv || x.value.indexOf(pv + ":") === 0; })[0]; if (o) vSel.value = o.value; }
     if (dSel.getAttribute("data-preset")) dSel.value = dSel.getAttribute("data-preset");
     var out = {
       total: $(".js-total", root), km: $(".js-bill-km", root), rate: $(".js-rate", root), base: $(".js-base", root), bata: $(".js-bata-total", root), wa: $(".js-est-wa", root)
