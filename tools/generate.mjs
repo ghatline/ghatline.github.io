@@ -85,29 +85,30 @@ const heroArt = `<svg viewBox="0 0 1440 480" preserveAspectRatio="xMidYMax slice
 </svg>`;
 
 /* --------------------------------------------------------------- route map */
-const GEO = { bangalore: [12.97, 77.59], goa: [15.49, 73.83], hampi: [15.335, 76.46], "north-karnataka": [15.92, 75.68], udupi: [13.34, 74.75], mangalore: [12.91, 74.86], "south-canara": [12.95, 75.38], kerala: [10.09, 77.06], coorg: [12.42, 75.74], chikmagalur: [13.32, 75.77], mysore: [12.3, 76.64], ooty: [11.41, 76.7], kodaikanal: [10.24, 77.49], sakleshpur: [12.94, 75.79], dandeli: [15.25, 74.62], "jog-falls": [14.23, 74.81], pondicherry: [11.94, 79.83], tirupati: [13.63, 79.42] };
-const LABEL = { goa: ["Goa", "s"], hampi: ["Hampi", "s"], "north-karnataka": ["Badami", "s"], udupi: ["Udupi", "e"], mangalore: ["Mangalore", "e"], "south-canara": ["Dharmasthala", "n"], kerala: ["Munnar", "e"], coorg: ["Coorg", "e"], chikmagalur: ["Chikmagalur", "s"], mysore: ["Mysore", "s"], ooty: ["Ooty", "s"], kodaikanal: ["Kodaikanal", "s"], sakleshpur: ["Sakleshpur", "s"], dandeli: ["Dandeli", "s"], "jog-falls": ["Jog Falls", "s"], pondicherry: ["Pondicherry", "e"], tirupati: ["Tirupati", "s"] };
+const GEO = { bangalore: [12.97, 77.59], goa: [15.49, 73.83], hampi: [15.335, 76.46], "north-karnataka": [15.92, 75.68], udupi: [13.34, 74.75], mangalore: [12.91, 74.86], "south-canara": [14.09, 74.48], kerala: [10.09, 77.06], coorg: [12.42, 75.74], chikmagalur: [13.32, 75.77], mysore: [12.3, 76.64], ooty: [11.41, 76.7], kodaikanal: [10.24, 77.49], sakleshpur: [12.94, 75.79], dandeli: [15.25, 74.62], "jog-falls": [14.23, 74.81], pondicherry: [11.94, 79.83], tirupati: [13.63, 79.42], dharmasthala: [12.95, 75.38], kukke: [12.66, 75.61], sringeri: [13.42, 75.25], horanadu: [13.26, 75.33], kollur: [13.86, 74.81], melukote: [12.66, 76.65], "mm-hills": [12.04, 77.57], mantralayam: [15.94, 77.43], puttaparthi: [14.17, 77.81], srisailam: [16.07, 78.87], tiruvannamalai: [12.23, 79.07], kanchipuram: [12.83, 79.7], madurai: [9.92, 78.12], rameswaram: [9.29, 79.31], velankanni: [10.68, 79.85], guruvayur: [10.59, 76.04], sabarimala: [9.43, 77.08] };
+const LABEL = { goa: ["Goa", "s"], hampi: ["Hampi", "s"], "north-karnataka": ["Badami", "s"], udupi: ["Udupi", "e"], mangalore: ["Mangalore", "e"], "south-canara": ["Murudeshwar", "e"], kerala: ["Munnar", "e"], coorg: ["Coorg", "e"], chikmagalur: ["Chikmagalur", "s"], mysore: ["Mysore", "s"], ooty: ["Ooty", "s"], kodaikanal: ["Kodaikanal", "s"], sakleshpur: ["Sakleshpur", "s"], dandeli: ["Dandeli", "s"], "jog-falls": ["Jog Falls", "s"], pondicherry: ["Pondicherry", "e"], tirupati: ["Tirupati", "s"], dharmasthala: ["Dharmasthala", "n"], kukke: ["Kukke", "s"], sringeri: ["Sringeri", "n"], horanadu: null, kollur: ["Kollur", "e"], melukote: ["Melukote", "s"], "mm-hills": ["MM Hills", "s"], mantralayam: ["Mantralayam", "s"], puttaparthi: ["Puttaparthi", "s"], srisailam: ["Srisailam", "s"], tiruvannamalai: ["Tiruvannamalai", "s"], kanchipuram: ["Kanchipuram", "e"], madurai: ["Madurai", "s"], rameswaram: ["Rameswaram", "s"], velankanni: ["Velankanni", "e"], guruvayur: ["Guruvayur", "e"], sabarimala: ["Sabarimala", "e"] };
 const P = ([lat, lng]) => [+((lng - 73.4) * 88 + 4).toFixed(1), +((16.2 - lat) * 88 + 10).toFixed(1)];
 const poly = (pts) => pts.map(([lng, lat], i) => (i ? "L" : "M") + P([lat, lng]).join(" ")).join("");
-const westCoast = [[73.45, 16.2], [73.7, 15.7], [73.85, 15.3], [74.1, 14.85], [74.4, 14.3], [74.5, 13.9], [74.7, 13.35], [74.85, 12.85], [75.0, 12.5], [75.4, 11.85], [75.75, 11.25], [76.0, 10.7], [76.25, 10.0], [76.35, 9.6]];
-const eastCoast = [[80.6, 15.9], [80.15, 15.3], [80.05, 14.6], [80.25, 13.6], [80.3, 13.0], [80.2, 12.5], [79.95, 12.1], [79.85, 11.6], [79.85, 10.9], [79.85, 10.3], [79.3, 10.0], [79.0, 9.6]];
+const westCoast = [[73.45, 16.2], [73.7, 15.7], [73.85, 15.3], [74.1, 14.85], [74.4, 14.3], [74.5, 13.9], [74.7, 13.35], [74.85, 12.85], [75.0, 12.5], [75.4, 11.85], [75.75, 11.25], [76.0, 10.7], [76.25, 10.0], [76.35, 9.6], [76.45, 9.3], [76.6, 8.85]];
+const eastCoast = [[80.6, 15.9], [80.15, 15.3], [80.05, 14.6], [80.25, 13.6], [80.3, 13.0], [80.2, 12.5], [79.95, 12.1], [79.85, 11.6], [79.85, 10.9], [79.85, 10.3], [79.3, 10.0], [79.0, 9.6], [78.9, 9.35], [79.2, 9.25], [78.6, 9.15], [78.2, 8.8], [78.1, 8.6]];
 function routeMap(rel, highlight) {
   const hub = P(GEO.bangalore);
   const legs = DESTS.filter((d) => GEO[d.id]).map((d) => {
     const [x, y] = P(GEO[d.id]);
     const mx = (hub[0] + x) / 2, my = (hub[1] + y) / 2, dx = x - hub[0], dy = y - hub[1];
     const cx = (mx - dy * 0.15).toFixed(1), cy = (my + dx * 0.15).toFixed(1);
-    const [txt, side] = LABEL[d.id] || [d.name, "s"];
+    const lab = LABEL[d.id] === null ? (highlight === d.id ? [d.name, "s"] : null) : LABEL[d.id] || [d.name, "s"];
+    const [txt, side] = lab || ["", "s"];
     const t = side === "e" ? `x="${x - 9}" y="${y + 4}" text-anchor="end"` : side === "n" ? `x="${x}" y="${y - 10}" text-anchor="middle"` : `x="${x + 9}" y="${y + 4}"`;
     const dim = highlight && highlight !== d.id ? ' opacity=".35"' : "";
-    return { leg: `<path class="leg" d="M${hub.join(" ")}Q${cx} ${cy} ${x} ${y}"${dim}/>`, node: `<a href="${rel}${d.slug}/"${dim}><circle class="dot" cx="${x}" cy="${y}" r="${highlight === d.id ? 7 : 5}"/><text ${t}>${e(txt)}</text></a>` };
+    return { leg: `<path class="leg" d="M${hub.join(" ")}Q${cx} ${cy} ${x} ${y}"${dim}/>`, node: `<a href="${rel}${d.slug}/"${dim}><title>${e(d.name)}</title><circle class="dot" cx="${x}" cy="${y}" r="${highlight === d.id ? 7 : 4.5}"/>${lab ? `<text ${t}>${e(txt)}</text>` : ""}</a>` };
   });
-  const westSea = poly([[73.3, 16.3], ...westCoast, [73.3, 9.5]]) + "Z";
-  const eastSea = poly([[80.7, 16.3], ...eastCoast, [80.7, 9.5]]) + "Z";
-  return `<svg viewBox="0 0 640 600" role="img" aria-labelledby="map-t map-d"><title id="map-t">Route map: Bangalore to popular destinations</title><desc id="map-d">Illustrative map of South India showing road trips from Bengaluru to ${DESTS.map((d) => d.name).join(", ")}. Not to scale.</desc>
-<rect class="land" width="640" height="600"/><path class="sea" d="${westSea}"/><path class="sea" d="${eastSea}"/>
+  const westSea = poly([[73.3, 16.3], ...westCoast, [76.6, 8.5], [73.3, 8.5]]) + "Z";
+  const eastSea = poly([[80.7, 16.3], ...eastCoast, [78.1, 8.5], [80.7, 8.5]]) + "Z";
+  return `<svg viewBox="0 0 640 680" role="img" aria-labelledby="map-t map-d"><title id="map-t">Route map: Bangalore to popular destinations</title><desc id="map-d">Illustrative map of South India showing road trips from Bengaluru to ${e(DESTS.map((d) => d.name).join(", "))}. Not to scale.</desc>
+<rect class="land" width="640" height="680"/><path class="sea" d="${westSea}"/><path class="sea" d="${eastSea}"/>
 <path class="coast" d="${poly(westCoast)}"/><path class="coast" d="${poly(eastCoast)}"/>
-<text class="sea-label" x="18" y="470">ARABIAN SEA</text><text class="sea-label" x="520" y="560" text-anchor="middle">BAY OF BENGAL</text>
+<text class="sea-label" x="18" y="560">ARABIAN SEA</text><text class="sea-label" x="634" y="600" text-anchor="end">BAY OF BENGAL</text>
 ${legs.map((l) => l.leg).join("")}${legs.map((l) => l.node).join("")}
 <circle class="hub" cx="${hub[0]}" cy="${hub[1]}" r="9"/><text class="hub-label" x="${hub[0] + 13}" y="${hub[1] - 10}">Bengaluru</text></svg>`;
 }
@@ -162,7 +163,7 @@ ${jsonld.map(ld).join("\n")}
 </head>`;
 }
 
-const NAV = [["Fleet", "fleet/"], ["Destinations", "#routes"], ["Packages", "packages/"], ["Fare estimate", "#estimate"], ["About", "about/"], ["Contact", "contact/"]];
+const NAV = [["Fleet", "fleet/"], ["Destinations", "#routes"], ["Temple tours", "pilgrimage-tours-from-bangalore/"], ["Packages", "packages/"], ["Fare estimate", "#estimate"], ["About", "about/"], ["Contact", "contact/"]];
 function header(rel, current) {
   return `<body>
 <a class="skip" href="#main">Skip to content</a>
@@ -199,7 +200,7 @@ function footer(rel) {
 ${socials()}
 </div>
 <div><h2>Fleet</h2><ul>${FLEET.map((v) => `<li><a href="${rel}${v.slug}/">${e(v.short)} on rent</a></li>`).join("")}<li><a href="${rel}fleet/">All vehicles</a></li></ul></div>
-<div><h2>Top routes</h2><ul>${DESTS.slice(0, 8).map((d) => `<li><a href="${rel}${d.slug}/">Bangalore to ${e(d.name)}</a></li>`).join("")}</ul></div>
+<div><h2>Top routes</h2><ul>${DESTS.filter((d) => d.kind !== "pilgrimage").slice(0, 5).map((d) => `<li><a href="${rel}${d.slug}/">Bangalore to ${e(d.name)}</a></li>`).join("")}${DESTS.filter((d) => ["tirupati", "kukke", "dharmasthala", "sringeri"].includes(d.id)).map((d) => `<li><a href="${rel}${d.slug}/">Bangalore to ${e(d.name)}</a></li>`).join("")}<li><a href="${rel}pilgrimage-tours-from-bangalore/">All temple tours</a></li></ul></div>
 <div><h2>Contact</h2><ul>
 <li><a data-tel href="tel:${B.phone}"><span data-cfg="business.phoneDisplay">${e(B.phoneDisplay)}</span></a></li>
 <li><a data-wa href="https://wa.me/${B.whatsapp}">WhatsApp us</a></li>
@@ -262,7 +263,7 @@ const productLd = (v) => {
 
 /* -------------------------------------------------------------- partials */
 function faqHtml(faqs) {
-  return `<div class="faq">${faqs.map(([q, a]) => `<details><summary>${e(q)}</summary><div class="answer"><p>${a}</p></div></details>`).join("")}</div>`;
+  return `<div class="faq">${faqs.map(([q, a]) => `<details><summary>${e(q)}</summary><div class="answer"><p>${e(a)}</p></div></details>`).join("")}</div>`;
 }
 
 function enquiryForm(id, preset = {}) {
@@ -314,13 +315,16 @@ function estimator(preset = {}) {
 </div>`;
 }
 
+const photoAlt = (v) => v.photo ? `${v.name} (representative photo)` : `${v.name} available on rent in Bangalore (photo placeholder)`;
+const photoCredit = (v) => v.photo ? `<figcaption class="credit">Representative photo, not our vehicle. <a href="${e(v.photo.source)}" target="_blank" rel="noopener">Photo</a>: ${e(v.photo.by)}, <a href="${e(v.photo.licenseUrl)}" target="_blank" rel="noopener">${e(v.photo.license)}</a>, ${e(v.photo.changes)}.</figcaption>` : "";
 function vehicleBlock(rel, v, level = "h3") {
   return `<article class="vehicle reveal">
-<div class="vehicle-media">
+<figure class="vehicle-media">
 <!-- TODO: replace with your own photo of your ${e(v.name)} (keep the same filenames, 960x640 and 480x320 WebP) -->
-<img src="${rel}assets/img/fleet/${v.image}-960.webp" srcset="${rel}assets/img/fleet/${v.image}-480.webp 480w, ${rel}assets/img/fleet/${v.image}-960.webp 960w" sizes="(min-width: 900px) 50vw, 100vw" width="960" height="640" loading="lazy" decoding="async" alt="${e(v.name)} available on rent in Bangalore (photo placeholder)">
+<img src="${rel}assets/img/fleet/${v.image}-960.webp" srcset="${rel}assets/img/fleet/${v.image}-480.webp 480w, ${rel}assets/img/fleet/${v.image}-960.webp 960w" sizes="(min-width: 900px) 50vw, 100vw" width="960" height="640" loading="lazy" decoding="async" alt="${e(photoAlt(v))}">
 <span class="tier">${e(v.tier)}</span>
-</div>
+${photoCredit(v)}
+</figure>
 <div>
 <${level}>${e(v.name)}</${level}>
 <ul class="seat-chips" aria-label="Seat options">${v.seats.map((s) => `<li>${s} seater</li>`).join("")}</ul>
@@ -333,11 +337,11 @@ function vehicleBlock(rel, v, level = "h3") {
 </article>`;
 }
 
-function routeDetails(rel, d) {
+function routeDetails(rel, d, lvl = 4) {
   return `<details>
-<summary><h3 class="dest">${e(d.name)}${d.sub ? `<small>${e(d.sub)}</small>` : `<small>${e(d.region)}</small>`}</h3><span class="meta"><b>~${d.km} km</b>${e(d.time)}</span></summary>
+<summary><h${lvl} class="dest">${e(d.name)}${d.sub ? `<small>${e(d.sub)}</small>` : `<small>${e(d.region)}</small>`}</h${lvl}><span class="meta"><b>~${d.km} km</b>${e(d.time)}</span></summary>
 <div class="route-body">
-<div><h4>Top places</h4><ul>${d.places.slice(0, 5).map((p) => `<li>${e(p)}</li>`).join("")}</ul></div>
+<div><h${lvl + 1} class="rb-h">Top places</h${lvl + 1}><ul>${d.places.slice(0, 5).map((p) => `<li>${e(p)}</li>`).join("")}</ul></div>
 <dl><div><dt>Suggested trip</dt><dd>${e(d.trip)}</dd></div><div><dt>Best season</dt><dd>${e(d.season)}</dd></div><div><dt>Recommended vehicle</dt><dd>${e(d.vehicle)}</dd></div></dl>
 <a class="link-arrow" href="${rel}${d.slug}/">Bangalore to ${e(d.name)} tempo traveller</a>
 </div>
@@ -459,7 +463,9 @@ function addSitemap(url, priority, freq = "monthly") { sitemap.push({ url, prior
 <div class="section-head reveal"><div><p class="eyebrow">Popular routes</p><h2 id="routes-h">Every road out of Bangalore</h2></div><p class="lede">From a Mysore day trip to a week down the Kerala coast. Tap a route for top places, the best season and the right vehicle size.</p></div>
 <div class="routes">
 <div class="route-map-wrap reveal"><div class="route-map">${routeMap(rel)}</div><p class="map-caption">Illustrative map, not to scale. Distances are approximate one-way road distances from central Bengaluru.</p></div>
-<div class="timetable">${DESTS.map((d) => routeDetails(rel, d)).join("")}</div>
+<div><h3 class="group-h">Hills, beaches and heritage</h3><div class="timetable">${DESTS.filter((d) => d.kind !== "pilgrimage").map((d) => routeDetails(rel, d)).join("")}</div>
+<h3 class="group-h" id="temples">Temples and pilgrimages</h3><div class="timetable">${DESTS.filter((d) => d.kind === "pilgrimage").map((d) => routeDetails(rel, d)).join("")}</div>
+<p style="margin-top:1.5rem"><a class="link-arrow" href="${rel}pilgrimage-tours-from-bangalore/">All temple and pilgrimage tours</a></p></div>
 </div>
 </div>
 </section>
@@ -549,10 +555,11 @@ FLEET.forEach((v, idx) => {
 <div class="dest-hero">
 <div><p class="eyebrow">${e(v.tier)} · ${vehBySeats(v)} seater</p><h1>${e(h1)}</h1><p class="lede">${e(v.idealFor)}</p>
 <div class="hero-ctas"><a class="btn btn--wa" data-wa="Hi ${e(B.name)}, I'd like a quote for the ${e(v.name)}." href="https://wa.me/${B.whatsapp}">${I.wa}Get a quote on WhatsApp</a><a class="btn btn--ghost" data-tel href="tel:${B.phone}">${I.phone}Call now</a></div></div>
-<div class="vehicle-media">
+<figure class="vehicle-media">
 <!-- TODO: replace with your own photo of your ${e(v.name)} -->
-<img src="${rel}assets/img/fleet/${v.image}-960.webp" srcset="${rel}assets/img/fleet/${v.image}-480.webp 480w, ${rel}assets/img/fleet/${v.image}-960.webp 960w" sizes="(min-width: 1000px) 40vw, 100vw" width="960" height="640" fetchpriority="high" alt="${e(v.name)} on rent in Bangalore (photo placeholder)">
-</div>
+<img src="${rel}assets/img/fleet/${v.image}-960.webp" srcset="${rel}assets/img/fleet/${v.image}-480.webp 480w, ${rel}assets/img/fleet/${v.image}-960.webp 960w" sizes="(min-width: 1000px) 40vw, 100vw" width="960" height="640" fetchpriority="high" alt="${e(photoAlt(v))}">
+${photoCredit(v)}
+</figure>
 </div>
 </div></section>
 <section class="section"><div class="wrap content-grid">
@@ -651,6 +658,10 @@ ${faqHtml(faqs)}
     { name: "Mysore and Ooty", dest: "ooty", len: "3N/4D", km: "~650 km round trip", days: [["Day 1", "Srirangapatna, Mysore Palace, Brindavan Gardens in the evening."], ["Day 2", "Chamundi Hills, drive through Bandipur–Mudumalai to Ooty (before the night closure)."], ["Day 3", "Botanical Garden, Ooty Lake, Doddabetta, toy train to Coonoor."], ["Day 4", "Pykara on the way down, return to Bengaluru."]] },
     { name: "Kerala hills and backwaters", dest: "kerala", len: "5N/6D", km: "~1,400 km round trip", days: [["Day 1", "Long drive to Munnar via Salem and Coimbatore."], ["Day 2", "Tea gardens, Eravikulam National Park, Mattupetty."], ["Day 3", "Drive to Alleppey; overnight houseboat."], ["Day 4", "Fort Kochi, Chinese fishing nets, Mattancherry."], ["Day 5", "Athirappilly Falls, drive towards the border."], ["Day 6", "Return to Bengaluru."]] },
     { name: "Goa getaway", dest: "goa", len: "3N/4D", km: "~1,200 km round trip", days: [["Day 1", "Early start via NH48; lunch at Hubballi, reach Goa by evening."], ["Day 2", "North Goa: Fort Aguada, Calangute, Baga, Anjuna."], ["Day 3", "Old Goa churches, Panaji's Fontainhas, South Goa beaches."], ["Day 4", "Return to Bengaluru."]] },
+    { name: "Kukke Subramanya and Dharmasthala", dest: "kukke", len: "1N/2D", km: "~620 km round trip", days: [["Day 1", "Early pickup, drive via Hassan and the Shiradi ghat to Kukke; holy dip in the Kumaradhara and darshan. Overnight at Kukke."], ["Day 2", "Morning pooja, drive to Dharmasthala for darshan and annadana, return to Bengaluru by night."]] },
+    { name: "Sringeri and Horanadu", dest: "sringeri", len: "2N/3D", km: "~720 km round trip", days: [["Day 1", "Drive via Chikmagalur to Sringeri; evening darshan at Sri Sharadamba Temple."], ["Day 2", "Vidyashankara Temple, Kigga, then Kalasa and Horanadu Sri Annapoorneshwari Temple."], ["Day 3", "Morning darshan, return via Belur temples."]] },
+    { name: "Tiruvannamalai and Kanchipuram", dest: "tiruvannamalai", len: "2N/3D", km: "~650 km round trip", days: [["Day 1", "Drive to Tiruvannamalai; Arunachaleswarar darshan and Ramana Ashram."], ["Day 2", "Morning Girivalam (optional), then Kanchipuram: Kamakshi, Ekambareswarar and Varadharaja temples."], ["Day 3", "Sripuram Golden Temple at Vellore, return to Bengaluru."]] },
+    { name: "Madurai and Rameswaram", dest: "rameswaram", len: "3N/4D", km: "~1,250 km round trip", days: [["Day 1", "Long drive via Salem and Dindigul to Madurai."], ["Day 2", "Meenakshi Amman Temple at dawn, drive to Rameswaram over the Pamban bridge."], ["Day 3", "Agni Theertham, Ramanathaswamy Temple, Dhanushkodi; drive back to Madurai."], ["Day 4", "Return to Bengaluru."]] },
     { name: "Tirupati darshan", dest: "tirupati", len: "1N/2D", km: "~520 km round trip", days: [["Day 1", "Pickup at night or early morning, reach Tirupati, Padmavathi Temple, Srikalahasti."], ["Day 2", "Tirumala darshan (as per your TTD slot), return to Bengaluru."]] },
   ].filter((p) => D[p.dest]);
   const html = head({ title: "Tempo Traveller Tour Packages from Bangalore", desc: "Sample tempo traveller tour plans from Bangalore: Coorg, Chikmagalur, Hampi, coastal temples, Ooty, Kerala, Goa and Tirupati. Customise on WhatsApp.", url: "packages/", rel, og: "packages", jsonld: [c.ld] }) + header(rel, "packages/") + `
@@ -662,6 +673,54 @@ ${pkgs.map((p) => `<article class="pkg reveal"><div><h2>${e(p.name)}</h2><p clas
 ` + footer(rel);
   write("packages/index.html", html);
   addSitemap("packages/", "0.8");
+}
+
+/* ---------- PILGRIMAGE HUB ---------- */
+{
+  const rel = "../";
+  const slug = "pilgrimage-tours-from-bangalore";
+  const c = crumbs(rel, [["Temple tours", slug + "/"]]);
+  const P = DESTS.filter((d) => d.kind === "pilgrimage");
+  const states = [...new Set(P.map((d) => d.state || "Other"))];
+  const faqs = [
+    ["Which temples can we visit from Bangalore by tempo traveller?", `We run temple trips to ${P.map((d) => d.name).join(", ")}, and we can plan any other temple route on request.`],
+    ["Can we visit Kukke Subramanya and Dharmasthala in one trip?", "Yes. They are about 50 km apart, so a 1N/2D trip covers both comfortably, with an overnight stay at Kukke if you have booked Sarpa Samskara."],
+    ["Do you help with darshan timings and dress codes?", "Yes. We plan the day around darshan timings and tell you the dress code for each temple before you leave. Special darshan, pooja and Virtual Queue tickets are booked by you on the temple's official website."],
+    ["Are tolls, parking and state permits included?", "Tolls, parking and inter-state permits (Tamil Nadu, Kerala, Andhra Pradesh) are usually extra and are listed clearly in your quote."],
+    ["Is the tempo traveller suitable for senior citizens?", "Yes. The Force Urbania and the luxury 1x1 tempo traveller have the most legroom and the easiest step-in, and we plan regular rest stops on long drives."],
+  ];
+  const html = head({ title: "Temple Tours from Bangalore by Tempo Traveller", desc: "Temple and pilgrimage tours from Bangalore by tempo traveller: Kukke, Dharmasthala, Sringeri, Horanadu, Tirupati, Madurai, Rameswaram, Guruvayur and more.", url: slug + "/", rel, og: "pilgrimage", jsonld: [c.ld, faqLd(faqs), { "@context": "https://schema.org", "@type": "ItemList", name: "Pilgrimage tours from Bangalore", itemListElement: P.map((d, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE}/${d.slug}/`, name: `Bangalore to ${d.name}` })) }] }) + header(rel, slug + "/") + `
+<section class="page-hero"><div class="wrap">${c.html}
+<p class="eyebrow">Temples and pilgrimages</p>
+<h1>Temple and pilgrimage tours from Bangalore</h1>
+<p class="lede">Family and group temple trips by tempo traveller, from a Melukote day trip to Kukke and Dharmasthala, Sringeri and Horanadu, Tirupati, Madurai and Rameswaram. We plan around darshan timings, dress codes and early starts.</p>
+<div class="hero-ctas"><a class="btn btn--wa" data-wa="Hi ${e(B.name)}, I'd like a quote for a temple trip from Bangalore." href="https://wa.me/${B.whatsapp}">${I.wa}Plan a temple trip on WhatsApp</a><a class="btn btn--ghost" href="#estimate">Estimate fare</a></div>
+</div></section>
+<section class="section"><div class="wrap">
+${states.map((st) => `<h2 class="group-h" style="margin-top:2rem">${e(st)}</h2><div class="timetable">${P.filter((d) => (d.state || "Other") === st).map((d) => routeDetails(rel, d, 3)).join("")}</div>`).join("\n")}
+</div></section>
+<section class="section section--tint"><div class="wrap content-grid">
+<div class="prose">
+<h2>Before you go: temple etiquette</h2>
+<ul>
+<li><strong>Dress code:</strong> many temples expect traditional dress. At Guruvayur and Horanadu, for example, men wear a dhoti or mundu, and women wear a saree or churidar. We tell you the rules for each temple when you book.</li>
+<li><strong>Book darshan and poojas early:</strong> Tirumala, Sabarimala (Virtual Queue) and Kukke's Sarpa Samskara are booked on the official temple websites, often weeks ahead.</li>
+<li><strong>Phones and cameras:</strong> some temples, such as Meenakshi Amman in Madurai, do not allow phones inside. Leave them safely in the vehicle with the driver.</li>
+<li><strong>Early starts:</strong> darshan queues are shortest early in the morning, so we often leave Bengaluru before dawn.</li>
+<li><strong>Festivals:</strong> Dasara, Shivaratri, Karthigai Deepam and Makaravilakku draw huge crowds. Book the vehicle early and expect slower roads.</li>
+</ul>
+<h2>Popular temple circuits</h2>
+<p>Kukke and Dharmasthala (1N/2D), Sringeri and Horanadu (2N/3D), the coastal circuit through Udupi, Kollur, Murudeshwar and Gokarna (4N/5D), Tiruvannamalai and Kanchipuram (2N/3D), and Madurai and Rameswaram (3N/4D). <a href="${rel}packages/">See the day-by-day plans</a>.</p>
+<h2>Frequently asked questions</h2>
+${faqHtml(faqs)}
+</div>
+<aside class="side-card"><h2>Plan your temple trip</h2>${enquiryForm("pil-enq")}</aside>
+</div></section>
+<section class="section section--forest" id="estimate" aria-label="Fare estimator"><div class="wrap">${estimator({ dest: "kukke" })}</div></section>
+<section class="section"><div class="wrap">${shareBar(slug + "/", "Temple tours from Bangalore by tempo traveller")}</div></section>
+` + footer(rel);
+  write(`${slug}/index.html`, html);
+  addSitemap(slug + "/", "0.9");
 }
 
 /* ---------- ABOUT ---------- */

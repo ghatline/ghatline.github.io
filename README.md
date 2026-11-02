@@ -46,6 +46,7 @@ Destination distances, drive times, seasons and places are in the `destinations`
 
 ## 3. Replacing images
 
+- **Representative photos (licence terms):** the Traveller and Luxury photos are freely licensed images from Wikimedia Commons (CC BY-SA), with number plates and other operators' names blurred. The licence requires the credit line shown under each photo, so keep it while those photos are used. When you add your own photo, delete that vehicle's `photo: {...}` block in `config.js` and the credit disappears.
 - **Vehicle photos:** replace `assets/img/fleet/urbania-960.webp`, `traveller-960.webp`, `maharaja-960.webp` (960×640) and the matching `-480.webp` files (480×320) with your own photos, keeping the same file names. Use only photos of **your own** vehicles. Convert JPG to WebP with https://squoosh.app (quality about 75).
 - **Hero illustration:** the ghat-road van on the home page is an inline SVG drawing. You can keep it, or replace it with your own photo (see the TODO in `tools/generate.mjs`).
 - **Instagram tiles:** six placeholder tiles in the "Follow our trips" section (TODO in `tools/generate.mjs`).

@@ -51,8 +51,8 @@
   },
   {
     "key": "south-canara",
-    "title": "Bangalore to South Canara Tempo Traveller",
-    "desc": "Bangalore to South Canara by tempo traveller or Force Urbania: ~300 km, 3N/4D plans, top places and an instant fare estimate."
+    "title": "Bangalore to Coastal Temple Circuit Tempo Traveller",
+    "desc": "Bangalore to Coastal Temple Circuit by tempo traveller or Force Urbania: ~480 km, 4N/5D plans, top places and an instant fare estimate."
   },
   {
     "key": "kerala",
@@ -110,9 +110,99 @@
     "desc": "Bangalore to Tirupati by tempo traveller or Force Urbania: ~250 km, 1N/2D plans, top places and an instant fare estimate."
   },
   {
+    "key": "dharmasthala",
+    "title": "Bangalore to Dharmasthala Tempo Traveller",
+    "desc": "Bangalore to Dharmasthala by tempo traveller or Force Urbania: ~300 km, 1N/2D plans, top places and an instant fare estimate."
+  },
+  {
+    "key": "kukke",
+    "title": "Bangalore to Kukke Subramanya Tempo Traveller",
+    "desc": "Bangalore to Kukke Subramanya by tempo traveller or Force Urbania: ~280 km, 1N/2D plans, top places and an instant fare estimate."
+  },
+  {
+    "key": "sringeri",
+    "title": "Bangalore to Sringeri Tempo Traveller",
+    "desc": "Bangalore to Sringeri by tempo traveller or Force Urbania: ~330 km, 2N/3D (with Horanadu) plans, top places and an instant fare estimate."
+  },
+  {
+    "key": "horanadu",
+    "title": "Bangalore to Horanadu Tempo Traveller",
+    "desc": "Bangalore to Horanadu by tempo traveller or Force Urbania: ~330 km, 1N/2D plans, top places and an instant fare estimate."
+  },
+  {
+    "key": "kollur",
+    "title": "Bangalore to Kollur Mookambika Tempo Traveller",
+    "desc": "Bangalore to Kollur Mookambika by tempo traveller or Force Urbania: ~420 km, 2N/3D plans, top places and an instant fare estimate."
+  },
+  {
+    "key": "melukote",
+    "title": "Bangalore to Melukote & Shravanabelagola Tempo Traveller",
+    "desc": "Bangalore to Melukote & Shravanabelagola by tempo traveller or Force Urbania: ~150 km, Day trip plans, top places and an instant fare estimate."
+  },
+  {
+    "key": "mm-hills",
+    "title": "Bangalore to Male Mahadeshwara Hills Tempo Traveller",
+    "desc": "Bangalore to Male Mahadeshwara Hills by tempo traveller or Force Urbania: ~210 km, 1N/2D plans, top places and an instant fare estimate."
+  },
+  {
+    "key": "mantralayam",
+    "title": "Bangalore to Mantralayam Tempo Traveller",
+    "desc": "Bangalore to Mantralayam by tempo traveller or Force Urbania: ~370 km, 1N/2D plans, top places and an instant fare estimate."
+  },
+  {
+    "key": "puttaparthi",
+    "title": "Bangalore to Puttaparthi & Lepakshi Tempo Traveller",
+    "desc": "Bangalore to Puttaparthi & Lepakshi by tempo traveller or Force Urbania: ~160 km, Day trip or 1N/2D plans, top places and an instant fare estimate."
+  },
+  {
+    "key": "srisailam",
+    "title": "Bangalore to Srisailam Tempo Traveller",
+    "desc": "Bangalore to Srisailam by tempo traveller or Force Urbania: ~520 km, 2N/3D plans, top places and an instant fare estimate."
+  },
+  {
+    "key": "tiruvannamalai",
+    "title": "Bangalore to Tiruvannamalai Tempo Traveller",
+    "desc": "Bangalore to Tiruvannamalai by tempo traveller or Force Urbania: ~190 km, 1N/2D plans, top places and an instant fare estimate."
+  },
+  {
+    "key": "kanchipuram",
+    "title": "Bangalore to Kanchipuram Tempo Traveller",
+    "desc": "Bangalore to Kanchipuram by tempo traveller or Force Urbania: ~280 km, 1N/2D plans, top places and an instant fare estimate."
+  },
+  {
+    "key": "madurai",
+    "title": "Bangalore to Madurai Tempo Traveller",
+    "desc": "Bangalore to Madurai by tempo traveller or Force Urbania: ~435 km, 2N/3D plans, top places and an instant fare estimate."
+  },
+  {
+    "key": "rameswaram",
+    "title": "Bangalore to Rameswaram Tempo Traveller",
+    "desc": "Bangalore to Rameswaram by tempo traveller or Force Urbania: ~610 km, 3N/4D (with Madurai) plans, top places and an instant fare estimate."
+  },
+  {
+    "key": "velankanni",
+    "title": "Bangalore to Velankanni Tempo Traveller",
+    "desc": "Bangalore to Velankanni by tempo traveller or Force Urbania: ~480 km, 2N/3D plans, top places and an instant fare estimate."
+  },
+  {
+    "key": "guruvayur",
+    "title": "Bangalore to Guruvayur Tempo Traveller",
+    "desc": "Bangalore to Guruvayur by tempo traveller or Force Urbania: ~480 km, 2N/3D plans, top places and an instant fare estimate."
+  },
+  {
+    "key": "sabarimala",
+    "title": "Bangalore to Sabarimala Tempo Traveller",
+    "desc": "Bangalore to Sabarimala by tempo traveller or Force Urbania: ~620 km, 2N/3D plans, top places and an instant fare estimate."
+  },
+  {
     "key": "packages",
     "title": "Tempo Traveller Tour Packages from Bangalore",
     "desc": "Sample tempo traveller tour plans from Bangalore: Coorg, Chikmagalur, Hampi, coastal temples, Ooty, Kerala, Goa and Tirupati. Customise on WhatsApp."
+  },
+  {
+    "key": "pilgrimage",
+    "title": "Temple Tours from Bangalore by Tempo Traveller",
+    "desc": "Temple and pilgrimage tours from Bangalore by tempo traveller: Kukke, Dharmasthala, Sringeri, Horanadu, Tirupati, Madurai, Rameswaram, Guruvayur and more."
   },
   {
     "key": "about",
