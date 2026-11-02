@@ -424,3 +424,4 @@ textarea { min-height: 7rem; resize: vertical; }
 .section--forest .est-result .muted { color: var(--muted); }
 @media (max-width: 520px) { .spec > div { grid-template-columns: 1fr; gap: .3rem; } }
 .brand > span { white-space: nowrap; }
+@media (max-width: 1240px) { .brand small { display: none; } }
