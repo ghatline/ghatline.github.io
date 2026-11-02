@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://rahulsah.net/tempo-traveller-bangalore/sitemap.xml
+Sitemap: https://rahul-sah089.github.io/tempo-traveller-bangalore/sitemap.xml
