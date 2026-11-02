@@ -11,8 +11,8 @@
    ===================================================================== */
 window.SITE_CONFIG = {
   business: {
-    name: "Your Travels",                 // TODO: your business name
-    legalName: "Your Travels",            // TODO: registered name (for Terms/Privacy)
+    name: "Ghatline Travels",
+    legalName: "Ghatline Travels",       // TODO: confirm registered name (for Terms/Privacy)
     tagline: "Tempo traveller & Force Urbania on rent in Bangalore",
     phone: "+910000000000",               // TODO: E.164 format, e.g. +919876543210
     phoneDisplay: "+91 00000 00000",      // TODO: how the number is shown on the site

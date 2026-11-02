@@ -821,7 +821,7 @@ ${sitemap.map((s) => `  <url><loc>${SITE}/${s.url}</loc><lastmod>${TODAY}</lastm
 </urlset>
 `);
 write("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
-write("site.webmanifest", JSON.stringify({ name: B.name, short_name: B.name.slice(0, 12), description: B.tagline, start_url: "./", scope: "./", display: "standalone", background_color: "#f4f1ea", theme_color: "#1e3a2b", icons: [{ src: "android-chrome-192.png", sizes: "192x192", type: "image/png" }, { src: "android-chrome-512.png", sizes: "512x512", type: "image/png" }, { src: "favicon.svg", sizes: "any", type: "image/svg+xml" }] }, null, 2));
+write("site.webmanifest", JSON.stringify({ name: B.name, short_name: B.name.length <= 12 ? B.name : B.name.split(" ")[0], description: B.tagline, start_url: "./", scope: "./", display: "standalone", background_color: "#f4f1ea", theme_color: "#1e3a2b", icons: [{ src: "android-chrome-192.png", sizes: "192x192", type: "image/png" }, { src: "android-chrome-512.png", sizes: "512x512", type: "image/png" }, { src: "favicon.svg", sizes: "any", type: "image/svg+xml" }] }, null, 2));
 const seen = new Set();
 write("tools/og-pages.json", JSON.stringify(ogJobs.filter((j) => !seen.has(j.key) && seen.add(j.key)), null, 2));
 
