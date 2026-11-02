@@ -14,9 +14,9 @@ window.SITE_CONFIG = {
     name: "Ghatline Travels",
     legalName: "Ghatline Travels",       // TODO: confirm registered name (for Terms/Privacy)
     tagline: "Tempo traveller & Force Urbania on rent in Bangalore",
-    phone: "+910000000000",               // TODO: E.164 format, e.g. +919876543210
-    phoneDisplay: "+91 00000 00000",      // TODO: how the number is shown on the site
-    whatsapp: "910000000000",             // TODO: digits only, with country code, no +
+    phone: "+919831013410",
+    phoneDisplay: "+91 98310 13410",
+    whatsapp: "919831013410",            // WhatsApp: digits only, with country code
     email: "hello@example.com",           // TODO: your email
     area: "Your Area",                    // TODO: e.g. "Marathahalli"
     street: "",                           // TODO: street address (optional, shown in schema if set)
