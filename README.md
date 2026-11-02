@@ -2,7 +2,7 @@
 
 A fast, static website for a tempo traveller / Force Urbania rental business in Bengaluru. Plain HTML, CSS and a little vanilla JS. Hosted free on GitHub Pages, with no build step needed to serve it.
 
-**Live (until you add a business domain):** https://rahul-sah089.github.io/tempo-traveller-bangalore/
+**Live (until you add a business domain):** https://rahul-sah089.github.io/
 
 ---
 

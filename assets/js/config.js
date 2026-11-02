@@ -32,7 +32,7 @@ window.SITE_CONFIG = {
 
   // Live site address, no trailing slash. Change to "https://yourdomain.in"
   // once your custom domain is set up, then re-run the generator.
-  siteUrl: "https://rahul-sah089.github.io/tempo-traveller-bangalore", // change to "https://ghatline.in" if you buy that domain
+  siteUrl: "https://rahul-sah089.github.io", // change to "https://ghatline.in" if you buy that domain
 
   social: {
     instagram: "",        // TODO: full URL, e.g. https://instagram.com/yourhandle
