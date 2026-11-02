@@ -32,7 +32,7 @@ window.SITE_CONFIG = {
 
   // Live site address, no trailing slash. Change to "https://yourdomain.in"
   // once your custom domain is set up, then re-run the generator.
-  siteUrl: "https://rahul-sah089.github.io/tempo-traveller-bangalore",
+  siteUrl: "http://rahulsah.net/tempo-traveller-bangalore", // TODO: switch to https once HTTPS is enforced, or to your business domain
 
   social: {
     instagram: "",        // TODO: full URL, e.g. https://instagram.com/yourhandle
