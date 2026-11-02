@@ -2,7 +2,7 @@
 
 A fast, static website for a tempo traveller / Force Urbania rental business in Bengaluru. Plain HTML, CSS and a little vanilla JS. Hosted free on GitHub Pages, with no build step needed to serve it.
 
-**Live (until you add a business domain):** https://rahul-sah089.github.io/
+**Live (until you add a business domain):** https://ghatline.github.io/
 
 ---
 
@@ -85,7 +85,7 @@ Pages settings (already done for this repo): **Settings → Pages → Build and 
    | A | `@` | `185.199.109.153` |
    | A | `@` | `185.199.110.153` |
    | A | `@` | `185.199.111.153` |
-   | CNAME | `www` | `rahul-sah089.github.io` |
+   | CNAME | `www` | `ghatline.github.io` |
 
    Optional IPv6 AAAA records for `@`: `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`.
 4. In **Settings → Pages → Custom domain**, enter `yourdomain.in` and save. Wait for the DNS check to pass (minutes to a few hours).
